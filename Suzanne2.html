@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>-->
+    <style>
+        .label {
+            width: 10em;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gl-canvas" width="500" height="500">
+        <!-- The following message is displayed if the browser doesn’t support HTML5 -->
+        Sorry; your web browser does not support HTML5’s canvas element.
+    </canvas>
+    <div>
+        <span class="label">FOV:</span>
+        <input type="range" id="fov" min="5" max="175" value="90" step="0.1">
+    </div>
+    <div>
+        <span class="label">Line thickness:</span>
+        <input type="range" id="thickness" min="0.1" max="5" value="1.2" step="0.1">
+    </div>
+    <div>
+        <span class="label">Toggle:</span>
+        <button id="toggle-teapot">Teapot movement</button>
+        <button id="toggle-camera">Camera rotation</button>
+        <button id="toggle-quads">Triangles/quads</button>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="../webgl-utils.js" type="text/javascript"></script>
+    <script src="../initShaders2.js" type="text/javascript"></script>
+    <script src="../MV.js" type="text/javascript"></script>
+    <script src="../OBJParser.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var at = vec3(0, 0.25, 0);
+        var eye = vec3(0, 0.45, 0.5);
+        var fileName = 'Suzanne2.obj';
+    </script>
+    <script src="wireframe.js" type="text/javascript"></script>
+</body>
